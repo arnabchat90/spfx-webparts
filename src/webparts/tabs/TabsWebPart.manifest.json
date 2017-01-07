@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "50808520-e3d5-4ca3-81b2-7e1bc65674fd",
+  "alias": "TabsWebPart",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "50808520-e3d5-4ca3-81b2-7e1bc65674fd",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Tabs" },
+    "description": { "default": "Create a Simple Jquery Tabs" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "description": "Tabs"
+    }
+  }]
+}

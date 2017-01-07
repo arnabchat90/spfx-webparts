@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "89088b26-d51b-4e52-8d8f-32d906141ab6",
+  "alias": "AccordianWebpartWebPart",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "89088b26-d51b-4e52-8d8f-32d906141ab6",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Accordian-Webpart" },
+    "description": { "default": "Jqueryi UI 3rd Party CSS for Accordian" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "description": "Accordian-Webpart"
+    }
+  }]
+}

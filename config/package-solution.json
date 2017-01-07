@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "name": "spfx-jqueryui-client-side-solution",
+    "id": "15697d5a-295d-416e-854f-247354b50d41",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-jqueryui.spapp"
+  }
+}

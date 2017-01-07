@@ -1,0 +1,7 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "libraryName": "spfx-jqueryui",
+    "libraryId": "15697d5a-295d-416e-854f-247354b50d41",
+    "framework": "none"
+  }
+}
