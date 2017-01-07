@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## spfx-jqueryui
 
 This is where you include your web part docs.
@@ -25,7 +24,3 @@ gulp test - TODO
 gulp watch - TODO
 gulp build - TODO
 gulp deploy - TODO
-=======
-# spfx-webparts
-Stores all the webparts created in spfx
->>>>>>> b83924221631517cacc651092d3c1f93d6a22667

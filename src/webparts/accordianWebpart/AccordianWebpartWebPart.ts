@@ -26,7 +26,7 @@ export default class AccordianWebpartWebPart extends BaseClientSideWebPart<IAcco
     this.domElement.innerHTML = `
       <div class="${styles.accordianWebpart}">
         <div class="accordion">
-            <h3>Information</h3>
+            <h3>Site Admins</h3>
               <div>
                 <p>
                   The Volcanoes, crags, and caves park is a scenic destination for
@@ -40,21 +40,21 @@ export default class AccordianWebpartWebPart extends BaseClientSideWebPart<IAcco
                   left behind by the lava.
                 </p>
               </div>
-            <h3>Snow permit</h3>
+            <h3>User Groups</h3>
               <div>
                 <p>
                 The Northern region has snow in the mountains during winter.
                 Purchase a snow permit for access to approved ski areas.
                 </p>
               </div>
-          <h3>Hiking permit</h3>
+          <h3>Permission Levels</h3>
           <div>
             <p>
               The entire region has hiking trails for your enjoyment.
               Purchase a hiking permit for access to approved trails.
             </p>
           </div>
-          <h3>Volcano access</h3>
+          <h3>Get all users of a group</h3>
             <div>
               <p>
                 The volcanic region is beautiful but also dangerous. Each
