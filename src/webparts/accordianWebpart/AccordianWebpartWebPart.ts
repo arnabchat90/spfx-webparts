@@ -16,6 +16,13 @@ require('../../../node_modules/jquery-ui/themes/base/core.css');
 require('../../../node_modules/jquery-ui/themes/base/accordion.css');
 require('../../../node_modules/jquery-ui/themes/base/theme.css');
 
+//import environment type for implementing test stubs
+
+import {
+  Environment,
+  EnvironmentType
+} from '@microsoft/sp-client-base';
+
 export default class AccordianWebpartWebPart extends BaseClientSideWebPart<IAccordianWebpartWebPartProps> {
 
   public constructor(context: IWebPartContext) {
@@ -43,9 +50,9 @@ export default class AccordianWebpartWebPart extends BaseClientSideWebPart<IAcco
             <h3>User Groups</h3>
               <div>
                 <p>
-                The Northern region has snow in the mountains during winter.
-                Purchase a snow permit for access to approved ski areas.
+                List of all groups present in this site ${this.context.pageContext.web.title} - 
                 </p>
+                <div id="allGroupsInSite"></div>
               </div>
           <h3>Permission Levels</h3>
           <div>
@@ -70,7 +77,47 @@ export default class AccordianWebpartWebPart extends BaseClientSideWebPart<IAcco
         </div>
       </div>`;
       ($('.accordion', this.domElement) as any).accordion();
+      //getter
+      var autoHeight = ($('.accordion', this.domElement) as any).accordion( "option", "autoHeight" );
+      //setter
+      ($('.accordion', this.domElement) as any).accordion( "option", "autoHeight", false );
+      this._renderAllGroupsInsiteAsync();
+  }
 
+  private _getAllGroupsInSite() : Promise<any> {
+    return this.context.httpClient.get(this.context.pageContext.web.absoluteUrl + `/_api/web/sitegroups`)
+    .then((response : Response) => {
+      return response.json();
+    });
+  }
+
+  private _renderAllGroupsInsiteAsync() : void {
+    //Local Environment
+    if(Environment.type == EnvironmentType.Local) {
+      //implement get groups from mock stubs
+    }
+    else if (Environment.type == EnvironmentType.SharePoint || Environment.type == EnvironmentType.ClassicSharePoint) {
+      //implement the actual get call to SharePoint
+      this._getAllGroupsInSite()
+      .then((response) => {
+        this._renderAllGroupsInsite(response.value);
+      })
+    }
+  }
+
+  private _renderAllGroupsInsite(groups : any) : void {
+    let html: string = '';
+    groups.forEach((group: any) => {
+      html += `
+        <ul>
+            <li>
+                <span class="ms-font-l">${group.Title}</span>
+            </li>
+        </ul>`;
+    });
+
+    const listContainer: Element = this.domElement.querySelector('#allGroupsInSite');
+    listContainer.innerHTML = html;
   }
 
   protected get propertyPaneSettings(): IPropertyPaneSettings {
